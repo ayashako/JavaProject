@@ -10,19 +10,19 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     env:
-      AWS_ACCESS_KEY_ID: "AKIAIOSFODNN7EXAMPLE"
-      AWS_SECRET_ACCESS_KEY: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
-      GITHUB_TOKEN: "ghp_1234567890abcdefghijklmnopqrstuvwxyz"
-      DB_PASSWORD: "Password123!"
+      TEST_AWS_ACCESS_KEY_ID: "AKIA7Q9M2X8R4P6L3N5Z"
+      TEST_AWS_SECRET_ACCESS_KEY: "Kp9xQ2mV7aLs4Nz8Yw6Bc1Df3Gh5Jk0Rt2Uv9XeQ"
+      TEST_GITHUB_TOKEN: "ghp_Q7x9Lm2Np4Rs6Tv8Wx1Yz3Ab5Cd7Ef9Gh2Jk"
+      TEST_DATABASE_PASSWORD: "Vx9!Qm2#Lp7@Rs4$Nk8"
 
     steps:
       - uses: actions/checkout@v4
@@ -30,8 +30,8 @@ jobs:
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
-          distribution: 'temurin'
+          java-version: "17"
+          distribution: "temurin"
           cache: maven
 
       - name: Build with Maven
